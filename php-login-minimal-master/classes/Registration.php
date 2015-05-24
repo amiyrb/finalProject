@@ -67,7 +67,8 @@ class Registration
             && ($_POST['f_Name'])
             && ($_POST['l_Name'])
             && ($_POST['address'])
-            && ($_POST['state'])    
+            && ($_POST['state'])
+            && ($_POST['sex'])    
         ) {
             // create a database connection
             $this->db_connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -89,6 +90,7 @@ class Registration
                 $last_name = $_POST['l_Name'];
                 $address = $_POST['address'];
                 $state = $_POST['state'];
+                $sex = $_POST['sex'];
 
                 // crypt the user's password with PHP 5.5's password_hash() function, results in a 60 character
                 // hash string. the PASSWORD_DEFAULT constant is defined by the PHP 5.5, or if you are using
@@ -103,8 +105,9 @@ class Registration
                     $this->errors[] = "Sorry, that username / email address is already taken.";
                 } else {
                     // write new user's data into database
-                    $sql = "INSERT INTO users (user_name, user_password_hash, user_email, first_name, last_name , address , state )
-                            VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "','" . $first_name . "','" . $last_name . "','" . $address . "','" . $state . "');";
+                    $sql = "INSERT INTO users (user_name, user_password_hash, user_email, first_name, last_name , address ,state)
+                            VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "','" . $first_name . "','" . $last_name . "','" . $address . "','" .$state. "','" .$sex. "');";
+                    var_dump($sql);
                     $query_new_user_insert = $this->db_connection->query($sql);
 
                     // if user has been added successfully
