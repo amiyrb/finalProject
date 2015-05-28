@@ -35,7 +35,7 @@ class Registration
      * and creates a new user in the database if everything is fine
      */
     private function registerNewUser()
-    {
+    {    
         if (empty($_POST['user_name'])) {
             $this->errors[] = "Empty Username";
         } elseif (empty($_POST['user_password_new']) || empty($_POST['user_password_repeat'])) {
@@ -105,8 +105,8 @@ class Registration
                     $this->errors[] = "Sorry, that username / email address is already taken.";
                 } else {
                     // write new user's data into database
-                    $sql = "INSERT INTO users (user_name, user_password_hash, user_email, first_name, last_name , address ,state)
-                            VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "','" . $first_name . "','" . $last_name . "','" . $address . "','" .$state. "','" .$sex. "');";
+                    $sql = "INSERT INTO users (user_name, user_password_hash, user_email, first_name, last_name , address ,state , sex)
+                            VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "','" . $first_name . "','" . $last_name . "','" . $address . "','" .$state. "','" .$sex."');";
                     var_dump($sql);
                     $query_new_user_insert = $this->db_connection->query($sql);
 
