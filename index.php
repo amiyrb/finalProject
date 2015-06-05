@@ -9,11 +9,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Welcome to Barclift University</title>
+        <link rel="stylesheet" type="text/css" href="main.css" />
     </head>
     <body>
         <?php include'/view/header.php' ?>
         <main>
-            <nav>
+            <nav id="light_color">
                 <h3>
                     Welcome to Barclift University,Please Login to Access your file</h3>
                     <hr>
