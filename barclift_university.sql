@@ -26,6 +26,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `books`
 --
 
+CREATE DATABASE IF NOT EXISTS barclift_university;
+USE barclift_university;
+
 CREATE TABLE IF NOT EXISTS `books` (
   `bookID` int(11) NOT NULL AUTO_INCREMENT,
   `bookName` varchar(50) NOT NULL,
