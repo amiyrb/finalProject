@@ -2,7 +2,14 @@
 <?php include'/../view/header.php' ?>
 <hr>
 Dear, <?php echo $_SESSION['user_name']; ?>. You are logged in.
-Please choose your classes from this listing. Still logged in! ;)
+Please choose your classes from this listing. 
+<?php echo $_SESSION['user_email']; ?> Your user e-mail.
+<label for="books">Books</label>
+<select name="books">
+    <?php include('book_function.php') ?>
+</select>
+
+Still logged in! ;)
 
 <!-- because people were asking: "index.php?logout" is just my simplified form of "index.php?logout=true" -->
 
